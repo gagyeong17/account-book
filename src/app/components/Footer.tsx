@@ -8,23 +8,21 @@ const Footer = () => {
   ];
 
   return (
-    <>
-      <section className="border-t-2 border-sky-100 bg-white items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
-        {list.map((item, index) => (
-          <Link
-            href={item.href}
-            key={index}
-            className="gap-1 w-1/2 flex items-center justify-center h-full
+    <section className="border-t-2 border-sky-100 bg-white items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
+      {list.map((item, index) => (
+        <Link
+          href={item.href}
+          key={index}
+          className="gap-1 w-1/2 flex items-center justify-center h-full
           hover:bg-sky-100 active:bg-sky-100"
-          >
-            <button className="border-none">
-              {item.icon}
-              <span>{item.title}</span>
-            </button>
-          </Link>
-        ))}
-      </section>
-    </>
+        >
+          <button className="border-none">
+            {item.icon}
+            <span>{item.title}</span>
+          </button>
+        </Link>
+      ))}
+    </section>
   );
 };
 

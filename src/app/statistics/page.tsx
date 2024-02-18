@@ -32,14 +32,15 @@ const Page = () => {
       },
     ],
   };
-  const color = () => {
-    const colors = [];
-    for (let i = 0; i < Data.labels.length; i++) {
-      colors.push(BACKGROUND_COLOR[i % BACKGROUND_COLOR.length]);
-    }
-    return colors;
-  };
-  console.log(color());
+  //TODO: color random 으로 어떻게 할 지 고민해보기
+  // const color = () => {
+  //   const colors = [];
+  //   for (let i = 0; i < Data.labels.length; i++) {
+  //     colors.push(BACKGROUND_COLOR[i % BACKGROUND_COLOR.length]);
+  //   }
+  //   return colors;
+  // };
+  // console.log(color());
   const total = Data.datasets[0].data.reduce((acc, cur) => acc + cur, 0);
   return (
     <div className="w-full flex flex-col items-center">
