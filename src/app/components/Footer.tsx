@@ -8,7 +8,7 @@ const Footer = () => {
   ];
 
   return (
-    <section className="items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
+    <section className="border-t-2 border-sky-100 bg-white items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
       {list.map((item, index) => (
         <Link
           href={item.href}
