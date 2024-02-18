@@ -14,7 +14,6 @@ const Page = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLoginData({ ...loginData, [event.target.id]: event.target.value });
   };
-  console.log(loginData);
   return (
     <div className="px-10 flex flex-col justify-center items-center">
       <p className="py-10 text-[23px]">
