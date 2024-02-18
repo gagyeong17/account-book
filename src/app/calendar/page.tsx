@@ -1,5 +1,12 @@
+'use client';
+// import NavigationBar from '../components/NavigationBar';
 const Page = () => {
-  return <>가계부를 만들어 보겠습니다!</>;
+  return (
+    <div className="w-full">
+      {/* <NavigationBar title="가계부" /> */}
+      가계부
+    </div>
+  );
 };
 
 export default Page;
