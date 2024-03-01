@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 interface Props {
   title?: string;
@@ -8,16 +8,16 @@ interface Props {
 }
 
 function NavigationBar({
-  title = '',
+  title = "",
   leftBtn = <></>,
   rightBtn = <></>,
   bgColor,
 }: Props) {
   return (
     <>
-      <section
-        className={`fixed left-0 top-0 z-[99] flex h-[52px] w-full items-center justify-between bg-[${bgColor}] px-[20px] py-[14px] ${bgColor ??
-          'bg-white'}`}
+      <div
+        className={`border-b fixed max-w-[479px] top-0 z-[99] flex h-[52px] w-full items-center justify-between bg-[${bgColor}] px-[20px] py-[14px] ${bgColor ??
+          "bg-white"}`}
       >
         {/* LEFT BTN */}
         <div className="flex flex-1 items-center justify-start">{leftBtn}</div>
@@ -29,7 +29,7 @@ function NavigationBar({
         )}
         {/* RIGHT BTN */}
         <div className="flex flex-1 items-center justify-end">{rightBtn}</div>
-      </section>
+      </div>
       {/* SPACING DIV */}
       <div className="h-[52px] w-full"></div> {/* for padding top */}
     </>
