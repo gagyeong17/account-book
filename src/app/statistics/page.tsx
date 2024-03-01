@@ -4,6 +4,7 @@ import NavigationBar from "../components/NavigationBar";
 
 import { BACKGROUND_COLOR } from "./constants";
 const Page = () => {
+  //useInfiniteQuery scroll 로 구현하기
   const Data = {
     labels: [
       "입출금",

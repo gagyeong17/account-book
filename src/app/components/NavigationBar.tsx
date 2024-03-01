@@ -15,8 +15,8 @@ function NavigationBar({
 }: Props) {
   return (
     <>
-      <div
-        className={`border-b fixed max-w-[479px] top-0 z-[99] flex h-[52px] w-full items-center justify-between bg-[${bgColor}] px-[20px] py-[14px] ${bgColor ??
+      <section
+        className={`border-b-2 border-sky-100 fixed max-w-[479px] top-0 z-[99] flex h-[52px] w-full items-center justify-between bg-[${bgColor}] px-[20px] py-[14px] ${bgColor ??
           "bg-white"}`}
       >
         {/* LEFT BTN */}
@@ -29,7 +29,7 @@ function NavigationBar({
         )}
         {/* RIGHT BTN */}
         <div className="flex flex-1 items-center justify-end">{rightBtn}</div>
-      </div>
+      </section>
       {/* SPACING DIV */}
       <div className="h-[52px] w-full"></div> {/* for padding top */}
     </>

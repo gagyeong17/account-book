@@ -4,7 +4,7 @@ interface SpendingData {
 
 const SpendingList = ({ data }: SpendingData) => {
   return (
-    <div className="pb-4 mt-4 w-full px-10  max-h-[350px] overflow-y-auto">
+    <div className="pb-4 mt-4 w-full px-10  max-h-[350px]">
       {data.labels.map((label, index) => (
         <div
           key={index}
@@ -23,6 +23,7 @@ const SpendingList = ({ data }: SpendingData) => {
           <span>{data.datasets[0].data[index]}원</span>
         </div>
       ))}
+      <div className="h-[52px]" /> {/* for padding bottom by footer*/}
     </div>
   );
 };

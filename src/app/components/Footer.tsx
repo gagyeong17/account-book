@@ -1,16 +1,18 @@
-'use client';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import PieChartIcon from '@mui/icons-material/PieChart';
+"use client";
+import { memo } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PieChartIcon from "@mui/icons-material/PieChart";
 const Footer = () => {
   const pathname = usePathname();
   const list = [
-    { title: '달력', icon: <CalendarMonthIcon />, href: '/calendar' },
-    { title: '통계', icon: <PieChartIcon />, href: '/statistics' },
+    { title: "달력", icon: <CalendarMonthIcon />, href: "/calendar" },
+    { title: "통계", icon: <PieChartIcon />, href: "/statistics" },
   ];
 
-  if (pathname === '/calendar' || pathname === '/statistics') {
+  if (pathname === "/calendar" || pathname === "/statistics") {
     return (
       <section className="border-t-2 border-sky-100 bg-white items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
         {list.map((item, index) => (
@@ -32,4 +34,4 @@ const Footer = () => {
     return null;
   }
 };
-export default Footer;
+export default memo(Footer);
