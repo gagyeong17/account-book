@@ -25,7 +25,6 @@ const Page = () => {
       </p>
       <Input
         id="email"
-        type="text"
         placeholder="아이디를 입력해주세요"
         onChangeInput={handleInputChange}
         value={loginData.email}
@@ -38,11 +37,11 @@ const Page = () => {
         value={loginData.password}
       />
       <Input
-        id="password"
+        id="checkPassword"
         type="password"
         placeholder="비밀번호를 한번 더 입력해주세요"
         onChangeInput={handleInputChange}
-        value={loginData.password}
+        value={loginData.checkPassword}
       />
       <div className="h-4" />
       <Button>회원가입</Button>

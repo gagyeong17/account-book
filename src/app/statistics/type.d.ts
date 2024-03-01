@@ -15,7 +15,7 @@ type OptionType = {
 
 type SpendingData = {
   date: Date | string;
-  amount: number;
+  amount: number | string;
   categoryType: OptionType;
   paymentType: OptionType;
   content: string;

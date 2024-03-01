@@ -23,7 +23,6 @@ const Page = () => {
       </p>
       <Input
         id="email"
-        type="text"
         placeholder="아이디를 입력해주세요"
         onChangeInput={handleInputChange}
         value={loginData.email}
@@ -37,7 +36,7 @@ const Page = () => {
       />
       <div className="h-4" />
       <Button>로그인</Button>
-      <Link href="/signup">
+      <Link href="/signUp">
         <button className="pt-1 hover:underline underline-offset-4 text-black">
           회원가입 하러가기
         </button>

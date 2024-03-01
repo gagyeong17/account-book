@@ -8,83 +8,72 @@ import { CATEGORY_TYPES, PAYMENT_TYPES } from "@/app/constants/form";
 const Form = () => {
   const [formData, setFormData] = useState<SpendingData>({
     date: "",
-    amount: 0,
-    categoryType: CATEGORY_TYPES[0],
-    paymentType: PAYMENT_TYPES[0],
+    amount: "",
+    categoryType: { value: "", label: "", icon: "" },
+    paymentType: { value: "", label: "", icon: "" },
     content: "",
   });
-  console.log(formData);
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
-  const handleCategoryTypeChange = (event: OptionType) => {
-    setFormData({ ...formData, categoryType: event });
-  };
-  const handlePaymentTypeChange = (event: OptionType) => {
-    setFormData({ ...formData, paymentType: event });
+  const handleSubmit = () => {
+    console.log({
+      ...formData,
+      categoryType: formData.categoryType.value,
+      paymentType: formData.paymentType.value,
+    });
   };
   return (
-    <div className="w-full flex flex-col items-center">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}
+      className="w-full flex flex-col items-center"
+    >
       <div>
         <Input
+          label="날짜"
           id="date"
-          type="text"
-          placeholder="날짜를 입력해주세요"
           onChangeInput={handleInputChange}
           value={formData.date as string}
-          label="날짜"
         />
 
         <Input
+          label="금액"
           id="amount"
           type="tel"
-          placeholder="금액 입력해주세요"
           onChangeInput={handleInputChange}
           value={formData.amount as number}
-          label="금액"
         />
         <ListBox
-          value={formData.categoryType}
-          onChangeInput={handleCategoryTypeChange}
+          label="분류"
           list={CATEGORY_TYPES}
-          label="분류"
+          value={formData.categoryType}
+          onChangeInput={(event: OptionType) => {
+            setFormData({ ...formData, categoryType: event });
+          }}
         />
         <ListBox
-          value={formData.paymentType}
-          onChangeInput={handlePaymentTypeChange}
+          label="자산"
           list={PAYMENT_TYPES}
-          label="자산"
+          value={formData.paymentType}
+          onChangeInput={(event: OptionType) => {
+            setFormData({ ...formData, paymentType: event });
+          }}
         />
-        {/* <Input
-          id="categoryType"
-          type="text"
-          placeholder="분류를 입력해주세요"
-          onChangeInput={handleInputChange}
-          value={formData.categoryType.label}
-          label="분류"
-        />
-        <Input
-          id="paymentType"
-          type="text"
-          placeholder="자산을 입력해주세요"
-          onChangeInput={handleInputChange}
-          value={formData.paymentType.label}
-          label="자산"
-        /> */}
         <Input
           id="content"
-          type="text"
-          placeholder="내용을 입력해주세요"
           onChangeInput={handleInputChange}
           value={formData.content}
           label="내용"
         />
-
         <div className="h-6" />
         <Button>저장</Button>
       </div>
-    </div>
+    </form>
   );
 };
 

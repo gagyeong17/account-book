@@ -9,7 +9,6 @@ type ListBoxProps = {
 };
 const ListBox = ({ value, onChangeInput, list, label }: ListBoxProps) => {
   const [isFocused, setIsFocused] = useState(false);
-
   return (
     <Listbox value={value} onChange={onChangeInput}>
       <Listbox.Button
@@ -23,14 +22,13 @@ const ListBox = ({ value, onChangeInput, list, label }: ListBoxProps) => {
         {label && (
           <label className="text-gray-500 w-14 text-left">{label}</label>
         )}
-
         {value.label}
       </Listbox.Button>
       <Listbox.Options>
-        {list.map((person, idx) => (
+        {list.map((person) => (
           <Listbox.Option
             onClick={() => setIsFocused(false)}
-            key={idx}
+            key={person.value}
             value={person}
             className="flex items-center justify-between p-2 text-gray-500 hover:bg-gray-100 active:bg-gray-100  cursor-pointer"
           >
