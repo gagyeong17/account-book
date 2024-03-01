@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, ChangeEvent } from "react";
+import Link from "next/link";
 
-import Button from '../components/Button';
-import Input from '../components/Input';
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 const Page = () => {
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLoginData({ ...loginData, [event.target.id]: event.target.value });
   };
   return (
@@ -23,7 +23,6 @@ const Page = () => {
       </p>
       <Input
         id="email"
-        type="text"
         placeholder="아이디를 입력해주세요"
         onChangeInput={handleInputChange}
         value={loginData.email}
@@ -37,7 +36,7 @@ const Page = () => {
       />
       <div className="h-4" />
       <Button>로그인</Button>
-      <Link href="/signup">
+      <Link href="/signUp">
         <button className="pt-1 hover:underline underline-offset-4 text-black">
           회원가입 하러가기
         </button>
