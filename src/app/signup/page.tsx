@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, ChangeEvent } from "react";
+import Link from "next/link";
 
-import Button from '../components/Button';
-import Input from '../components/Input';
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 const Page = () => {
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: '',
-    checkPassword: '',
+    email: "",
+    password: "",
+    checkPassword: "",
   });
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLoginData({ ...loginData, [event.target.id]: event.target.value });
   };
   return (

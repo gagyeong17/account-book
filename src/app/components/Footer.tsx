@@ -1,19 +1,20 @@
 "use client";
 import { memo } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PieChartIcon from "@mui/icons-material/PieChart";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+
+import { CALENDAR, STATISTICS } from "../constants/routes";
 const Footer = () => {
-  const pathname = usePathname();
   const list = [
-    { title: "달력", icon: <CalendarMonthIcon />, href: "/calendar" },
-    { title: "통계", icon: <PieChartIcon />, href: "/statistics" },
+    { title: "달력", icon: <CalendarMonthIcon />, href: CALENDAR },
+    { title: "통계", icon: <PieChartIcon />, href: STATISTICS },
   ];
 
-  if (pathname === "/calendar" || pathname === "/statistics") {
-    return (
+  return (
+    <>
+      <div className="h-[52px] w-full" /> {/* for padding bottom */}
       <section className="border-t-2 border-sky-100 bg-white items-center h-[52px] flex flex-row fixed bottom-0 w-full max-w-[479px]">
         {list.map((item, index) => (
           <Link
@@ -29,9 +30,7 @@ const Footer = () => {
           </Link>
         ))}
       </section>
-    );
-  } else {
-    return null;
-  }
+    </>
+  );
 };
 export default memo(Footer);

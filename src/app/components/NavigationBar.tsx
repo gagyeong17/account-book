@@ -1,5 +1,8 @@
-import { memo } from "react";
+"use client";
 
+import { memo } from "react";
+import { useRouter } from "next/navigation";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
 interface Props {
   title?: string;
   leftBtn?: React.ReactNode;
@@ -10,9 +13,10 @@ interface Props {
 function NavigationBar({
   title = "",
   leftBtn = <></>,
-  rightBtn = <></>,
+  rightBtn,
   bgColor,
 }: Props) {
+  const router = useRouter();
   return (
     <>
       <section
@@ -28,10 +32,21 @@ function NavigationBar({
           </div>
         )}
         {/* RIGHT BTN */}
-        <div className="flex flex-1 items-center justify-end">{rightBtn}</div>
+        <div className="flex flex-1 items-center justify-end">
+          {rightBtn ? (
+            rightBtn
+          ) : (
+            <button
+              className="border-none"
+              onClick={() => router.push("/register")}
+            >
+              <ControlPointIcon sx={{ color: "#e0f2fe", fontSize: "32px" }} />
+            </button>
+          )}
+        </div>
       </section>
       {/* SPACING DIV */}
-      <div className="h-[52px] w-full"></div> {/* for padding top */}
+      <div className="h-[52px] w-full" /> {/* for padding top */}
     </>
   );
 }

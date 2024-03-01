@@ -1,8 +1,10 @@
 import Chart from "./components/Chart";
+import Footer from "../components/Footer";
 import SpendingList from "./components/SpendingList";
 import NavigationBar from "../components/NavigationBar";
 
 import { BACKGROUND_COLOR } from "./constants";
+
 const Page = () => {
   //useInfiniteQuery scroll 로 구현하기
   const Data = {
@@ -48,12 +50,12 @@ const Page = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <NavigationBar title="통계" />
-
       <div className="my-4">
         <span>지출: {total}원</span>
       </div>
       <Chart data={Data} />
       <SpendingList data={Data} />
+      <Footer />
     </div>
   );
 };
